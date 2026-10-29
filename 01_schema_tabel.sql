@@ -1,10 +1,13 @@
 
+-- Membuat schema SALAM
 CREATE SCHEMA IF NOT EXISTS "SALAM";
 
+-- Membuat tabel mahasiswas
 CREATE TABLE IF NOT EXISTS "SALAM".mahasiswas (
     id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nim VARCHAR(20) NOT NULL UNIQUE,
     nama VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    semester INTEGER NOT NULL CHECK (semester BETWEEN 1 AND 14)
+    semester INTEGER NOT NULL
+        CHECK (semester BETWEEN 1 AND 14)
 );
